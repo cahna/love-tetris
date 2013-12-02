@@ -68,22 +68,27 @@ class Game extends UiState
     scorebar\draw!
 
   update: (dt) =>
-    if tetris
-      --print "load time:", dt
-      if action
-        action = nil
-
+    --if tetris
+    --  print "load time:", dt
+      
   keypressed: (key, code) =>
     switch key
       when "left"
+        print "User wants to move left..."
         tetris\moveLeft!
       when "right"
+        print "User wants to move right..."
         tetris\moveRight!
       when "up"
-        action = tetris\rotateOnce
-      when "space"
-        action = tetris\forceDrop
+        print "User wants to rotate piece..."
+        tetris\rotate!
+      when " "
+        print "User wants to force drop..."
+        tetris\forceDrop!
+      when "down"
+        print "User wants to move down..."
+        tetris\moveDown!
+      when "escape"
+        os.exit!
       else
-        action = @action or nil
-
-    os.exit! if key == "escape" and not aroma
+        print "Unknown action"
