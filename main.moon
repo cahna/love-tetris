@@ -4,13 +4,16 @@
 
 require "ui"
 
-import dump from require "pl.pretty"
+export MIN_WAIT  = 120
+export FULL_STEP = 1000
 
 local ui
 
 love.load = () ->
   export background = g.newImage("resources/windowbg.png")
-  export tiles = {i, g.newImage "resources/tile#{i}.png" for i = 0, 7}
+  export tiles = {i, g.newImage "resources/tile#{i}.png" for i = 0, 8}
+  export mainFont = g.newFont("resources/UbuntuMono-BI.ttf", 18)
+
   ui = Game!
   ui\attach love
 
