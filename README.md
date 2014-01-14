@@ -4,6 +4,7 @@ Dependencies
 * `love 0.8`
 * `lua`
 * `moonscript`
+* `UbuntuMono-BI.ttf` _not included_ - place in `resources/
 
 Usage
 ===
